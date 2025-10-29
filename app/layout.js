@@ -6,6 +6,8 @@ const mori = localFont({
 });
 
 import "./globals.css";
+import Navbar from '@/components/Home/Navbar/Navbar';
+import Footer from '@/components/Home/Footer/Footer';
 
 export const metadata = {
   title: "FitGrips® -Premium Fitness Gear, Grips, Belts & more Designed for Powerlifters",
@@ -18,7 +20,9 @@ export default function RootLayout({ children }) {
       <body
         className={`${mori.className} antialiased`}
       >
+        <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
