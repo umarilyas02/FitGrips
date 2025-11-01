@@ -10,7 +10,19 @@ const nextConfig = {
             port: '',
             pathname: '/**', // Allows images from any path on this host
           },
-        ],
+          {
+            protocol: 'https',
+            hostname: 'fitgrips.com', // Replace with your image host
+            port: '',
+            pathname: '/**', // Allows images from any path on this host
+          },
+          {
+            protocol: 'https',
+            hostname: 'utfs.io', // Replace with your image host
+            port: '',
+            pathname: '/**', // Allows images from any path on this host
+          },
+        ]
       },
 };
 

@@ -23,3 +23,38 @@ body {
   font-family: 'PPMori', 'Poppins', Helvetica, sans-serif;
   font-weight: semibold;
 }
+
+/*
+  File: app/globals.css
+  (or whatever your main CSS file is)
+*/
+
+/* Make sure this import is at the top. 
+  It's what loads all of Tailwind's styles.
+*/
+
+/* This is the new v4 way to add custom animations.
+  We add it inside an @theme block.
+*/
+@theme {
+  /* 1. Define the animation utility.
+       This creates the 'animate-scroll' class.
+  */
+  --animate-scroll: scroll 15s linear infinite;
+
+  /* 2. Define the keyframes the utility will use.
+  */
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      /* We move by -50% because we are duplicating the content */
+      transform: translateX(-50%);
+    }
+  }
+}
+
+/* This optional plugin adds the 'pause-animation' class.
+  You can use it with 'hover:pause-animation'
+*/

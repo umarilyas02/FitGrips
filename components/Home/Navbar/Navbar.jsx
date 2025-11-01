@@ -9,7 +9,7 @@ const Navbar = () => {
     <header className="flex flex-col">
       {/* ===== REFER PART =====*/}
       <div
-        className="w-screen h-8 py-4 text-center
+        className="w-full h-8 py-4 text-center
         sm:h-8 sm:px-8 sm:py-4 bg-gray-100 border border-gray-200 text-gray-600
         sm:justify-between flex justify-center items-center text-sm font-semibold"
       >
@@ -50,6 +50,7 @@ const Navbar = () => {
                   width={150}
                   height={150}
                   loading="eager"
+                  className="h-auto w-auto"
                 />
               </Link>
             </div>
@@ -61,6 +62,7 @@ const Navbar = () => {
                   width={150}
                   height={150}
                   loading="eager"
+                  className="h-auto w-auto"
                 />
               </Link>
             </div>

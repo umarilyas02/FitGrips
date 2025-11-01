@@ -25,7 +25,7 @@ const SlideInMenu = ({ isOpen, onClose }) => {
           </button>
         </div>
 
-        {/* Your Mobile Nav Links */}
+        {/* ===== Mobile Nav Links ===== */}
         <nav className="flex flex-col gap-6">
           <Link
             href="/shop"
@@ -62,14 +62,14 @@ const SlideInMenu = ({ isOpen, onClose }) => {
           >
             About Us
           </Link>
-          <Link
+          <a
             href="mailto:info@fitgrips.com"
             onClick={onClose}
             className=" text-shadow-black
                  font-semibold hover:text-purple-600"
           >
             Help Center
-          </Link>
+          </a>
           <Link
             href="/contact-us"
             onClick={onClose}

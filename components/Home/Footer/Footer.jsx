@@ -63,14 +63,14 @@ const Footer = () => {
                 alt="Google Play Store Download"
                 height={120}
                 width={120}
-                className="rounded-sm"
+                className="rounded-sm h-auto w-auto"
               />
               <Image
                 src="/Download_on_the_App_Store_Badge.svg"
                 alt="App Store Download"
                 height={120}
                 width={120}
-                className="rounded-sm"
+                className="rounded-sm h-auto w-auto"
               />
             </div>
           </div>
@@ -79,7 +79,7 @@ const Footer = () => {
 
       {/* ====== Center Footer ====== */}
 
-      <div className="flex flex-col md:flex-row md:items-center mx-4 lg:mx-8 py-8 border-t border-b  ">
+      <div className="flex flex-col md:flex-row md:items-center mx-4 lg:mx-8 py-8 border-t border-b overflow-x-hidden">
         <div className="flex flex-col gap-2 justify-between lg:text-2xl w-full">
           <h1 className="font-bold ">
             Join us! Tips, tricks and more.{" "}
