@@ -1,8 +1,10 @@
 import React from "react";
 import Link from "next/link";
-import { Search, ShoppingCart, TextAlignStart } from "lucide-react";
+import { Search, ShoppingCart, } from "lucide-react";
 import Image from "next/image";
+import ToggleNav from "./ToggleNav";
 const Navbar = () => {
+  
   return (
     <header className="flex flex-col">
       {/* ===== REFER PART =====*/}
@@ -37,9 +39,7 @@ const Navbar = () => {
       {/*  ====== MID NAV =====*/}
       <nav className=" bg-white px-4 py-2 top-0">
         <div className="flex items-center justify-between">
-          <button className="md:hidden font-extrabold">
-            <TextAlignStart width={25} height={25} strokeWidth={2.5} />
-          </button>
+          <ToggleNav />
 
           <div className="flex items-center gap-6 pl-5 py-3">
             <div className="hidden md:block min-w-[100px]">
@@ -97,6 +97,7 @@ const Navbar = () => {
           </div>
 
           {/*============ SEARCH END=============  */}
+          
 
           <div className="flex items-center gap-6 pr-5 py-3">
             <div className="hidden md:block">
@@ -158,6 +159,27 @@ const Navbar = () => {
           </nav>
         </div>
       </div>
+
+                      {/* ============ MOBILE SEARCH START ============ */}
+      <div className=" md:hidden flex-1 mx-4 mb-4">
+            <div className="h-14 w-full min-w-0 border rounded-full flex bg-gray-100 border-gray-400 p-2">
+              <div className="flex flex-col flex-1 pl-3 ">
+                <div className="text-xs">Searching For</div>
+                <input
+                  type="search"
+                  name=""
+                  id=""
+                  placeholder="Wrist Wraps..."
+                  className="w-full outline-none"
+                  inputMode="disabled"
+                />
+              </div>
+              <div className="flex items-center px-1 ">
+                <Search className="cursor-pointer" color="gray" />
+              </div>
+            </div>
+          </div>
+ {/* ============ MOBILE SEARCH END ============ */}
     </header>
   );
 };

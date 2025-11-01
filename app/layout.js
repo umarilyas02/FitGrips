@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${mori.className} antialiased`}
+        className={`${mori.className} antialiased flex flex-col h-screen`}
       >
         <Navbar />
         {children}

@@ -79,7 +79,7 @@ const Footer = () => {
 
       {/* ====== Center Footer ====== */}
 
-      <div className="flex flex-col md:flex-row mx-4 lg:mx-8 py-8 border-t border-b  ">
+      <div className="flex flex-col md:flex-row md:items-center mx-4 lg:mx-8 py-8 border-t border-b  ">
         <div className="flex flex-col gap-2 justify-between lg:text-2xl w-full">
           <h1 className="font-bold ">
             Join us! Tips, tricks and more.{" "}
