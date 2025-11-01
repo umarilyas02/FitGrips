@@ -29,7 +29,7 @@ const footerLinks = {
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white">
+    <footer className="bg-black text-white mt-4 sm:mt-0">
       {/* ====== LINKS ====== */}
       <div className="max-w mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-y-10 lg:gap-x-12">
@@ -47,7 +47,7 @@ const Footer = () => {
           <div className="lg:col-span-5 xl:col-span-4 space-y-8">
             <div className="w-full bg-gray-700 border border-gray-600 rounded-3xl flex items-center space-x-3">
               <Image
-                src="/Fitgrips-qr.png"
+                src="/FitGrips-qr.png"
                 alt="FitGrips QR"
                 width={100}
                 height={100}

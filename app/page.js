@@ -1,4 +1,6 @@
+import Explore from "@/components/Home/Explore/Explore";
 import Hero from "@/components/Home/Hero/Hero";
+import OrderProcess from "@/components/Home/OrderProcess/OrderProcess";
 import Products from "@/components/Home/Products/Products";
 import Trending from "@/components/Home/Trending/Trending";
 
@@ -8,6 +10,8 @@ export default function Home() {
 <Hero />
 <Products />
 <Trending />
+<Explore />
+<OrderProcess />
 
     </div>
   );

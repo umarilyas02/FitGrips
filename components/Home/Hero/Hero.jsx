@@ -17,8 +17,14 @@ const Hero = () => {
           </main>
         </div>
       </div>
-      <Scroller />
-      
+      <Scroller
+      items={[
+    "When effort meets the right tools, transformation happens-",
+    "Fuel your journey with premium gym gear built for results.",
+    "Elevate your performance with FitGrips® equipment.",
+
+  ]} />
+
     </>
   );
 };

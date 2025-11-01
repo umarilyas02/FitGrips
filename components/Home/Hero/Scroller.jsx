@@ -1,12 +1,6 @@
 import React from 'react'
 
-const Scroller = () => {
-  const items = [
-    "When effort meets the right tools, transformation happens-",
-    "Fuel your journey with premium gym gear built for results.",
-    "Elevate your performance with FitGrips® equipment.",
-    
-  ];
+const Scroller = ({items}) => {
 
   return (
     <div className="w-full h-15 sm:h-20 flex items-center bg-black">

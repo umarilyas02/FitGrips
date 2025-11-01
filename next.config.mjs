@@ -22,6 +22,12 @@ const nextConfig = {
             port: '',
             pathname: '/**', // Allows images from any path on this host
           },
+            {
+              protocol: 'https',
+              hostname: 'ts1xw1iyvq.ufs.sh', // Additional ufs.sh subdomain used in Explore
+              port: '',
+              pathname: '/**',
+            },
         ]
       },
 };
