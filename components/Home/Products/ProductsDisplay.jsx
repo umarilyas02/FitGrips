@@ -11,12 +11,14 @@ import { Flame } from 'lucide-react'
 const ProductsDisplay = (props) => {
 
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(6); // Default to 6 for mobile
 
 useEffect(() => {
   async function fetchproducts() {
     try {
+      setLoading(true);
       let response = await axios.get(process.env.NEXT_PUBLIC_PRODUCTS_API);
       let filteredResponse = response.data.filter(item => Number(item.category_id) === Number(props.category_id));
       setProducts(filteredResponse);
@@ -26,6 +28,9 @@ useEffect(() => {
       console.error("Error fetching products:", error)
 
       
+    }
+    finally {
+      setLoading(false);
     }
   }
 
@@ -60,7 +65,7 @@ useEffect(() => {
 
   return (
     <section>
-      <div className="w-full  mx-auto px-2 sm:px-4 lg:px-6 py-12">
+      <div className="w-full  mx-auto px-2 sm:px-4 lg:px-6 py-6 md:py-12">
         <div className='flex flex-col sm:flex-row gap-2 md:gap-4 sm:items-center sm:justify-between'>
           <div className="flex flex-col gap-2">
             <h1 className='text-xl md:text-3xl font-extrabold'>{props.title}</h1>
@@ -77,7 +82,18 @@ useEffect(() => {
 
         {/* Responsive product grid (max 3 items per page, larger on desktop) */}
         <div className= {`grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mt-8`}>
-          {visibleProducts
+          {loading ? (
+            Array.from({ length: pageSize }).map((_, idx) => (
+              <div key={`skeleton-${idx}`} className="flex flex-col gap-1 animate-pulse">
+                <div className='relative w-full aspect-square overflow-hidden rounded-2xl sm:rounded-3xl bg-gray-200' />
+                <div className="h-4 bg-gray-200 rounded w-3/4 mt-3" />
+                <div className="h-3 bg-gray-200 rounded w-1/2" />
+              </div>
+            ))
+          ) : products.length === 0 ? (
+            <div className="col-span-2 md:col-span-3 text-center text-sm text-gray-600 py-8">No products found.</div>
+          ) : (
+          visibleProducts
             .map((product) => {
               let imgSrc;
               try {
@@ -126,7 +142,8 @@ useEffect(() => {
                   </div>
                 </div>
               )
-            })}
+            })
+          )}
         </div>
 
         {/* Pagination controls */}

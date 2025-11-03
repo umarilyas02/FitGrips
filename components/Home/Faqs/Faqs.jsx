@@ -38,13 +38,13 @@ const Faqs = () => {
 
   return (
     <>
-      <section className="w-full overflow-hidden mt-12 mb-4 md:mb-8 md:mt-16">
-        <div className="flex flex-col md:flex-row gap-4 px-2 md:px-4">
-          <div className="flex flex-col gap-4 items-start justify-center">
+      <section className="w-full md:w-[90vw] overflow-hidden mt-12 mb-4 md:mb-8 md:mt-16">
+        <div className="flex flex-col md:flex-row px-2 md:px-4 gap-4">
+          <div className="flex flex-col gap-4 items-start justify-center px-4 md:ml-16">
             <h1 className="text-2xl md:text-3xl font-bold">
               Your Questions Answered — About FitGrips Premium Fitness Gear
             </h1>
-            <p className="text-sm md:text-base text-gray-600">
+            <p className="text-xs md:text-base text-gray-600 max-w-lg md:max-w-md">
               Explore everything you need to know about FitGrips Wrist Grips,
               Lifting Straps, and Knee Wraps. Designed for athletes who demand
               support, durability, and performance FitGrips products are trusted
@@ -55,7 +55,7 @@ const Faqs = () => {
               Create Account
             </button>
           </div>
-          <div className="flex flex-col gap-4 overflow-y-auto max-h-[70vh] md:max-h-[80vh] pr-2">
+          <div className="flex flex-col gap-4 overflow-y-auto max-h-[70vh] md:max-h-[80vh] pr-2 max-w-lg md:max-w-2xl">
             {faqs.map((faq) => (
               <div
                 key={faq.id}

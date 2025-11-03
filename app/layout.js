@@ -6,8 +6,8 @@ const mori = localFont({
 });
 
 import "./globals.css";
-import Navbar from '@/components/Home/Navbar/Navbar';
-import Footer from '@/components/Home/Footer/Footer';
+import Navbar from '@/components/Layouts/Home/Navbar/Navbar';
+import Footer from '@/components/Layouts/Home/Footer/Footer';
 
 export const metadata = {
   title: "FitGrips® -Premium Fitness Gear, Grips, Belts & more Designed for Powerlifters",

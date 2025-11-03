@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import FooterSection from "@/components/Home/Footer/FooterSection.jsx";
+import FooterSection from "@/components/Layouts/Home/Footer/FooterSection.jsx";
 import { InstagramIcon, LucideFacebook, LucideInstagram, LucideLinkedin } from "lucide-react";
 import Link from "next/link";
 
