@@ -6,7 +6,7 @@ import Image from "next/image";
 const SlideInMenu = ({ isOpen, onClose }) => {
   return (
     <div
-      className={`h-screen w-screen fixed inset-0 bg-opacity-50 z-40 md:hidden  overflow-x-hidden${
+      className={`h-screen w-screen fixed inset-0 bg-opacity-50 z-40 md:hidden overflow-x-hidden ${
         isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
       }`}
       onClick={onClose}
@@ -65,8 +65,7 @@ const SlideInMenu = ({ isOpen, onClose }) => {
           <a
             href="mailto:info@fitgrips.com"
             onClick={onClose}
-            className=" text-shadow-black
-                 font-semibold hover:text-purple-600"
+            className="text-shadow-black font-semibold hover:text-purple-600"
           >
             Help Center
           </a>

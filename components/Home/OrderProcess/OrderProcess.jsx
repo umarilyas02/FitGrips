@@ -12,7 +12,7 @@ const OrderProcess = () => {
 
   return (
     <>
-    <section className="w-full mt-12 h-[80vh] sm:h-screen">
+  <section className="w-full mt-12 sm:mt-16 h-auto pb-4 md:pb-8">
       <div className="flex flex-col items-center justify-center gap-4 mx-2 sm:mx-4 lg:mx-6">
         <h1 className="text-2xl sm:text-5xl font-extrabold">
           How to Order - Simple Steps
@@ -46,7 +46,7 @@ const OrderProcess = () => {
           <Steps
             stepNumber={1}
             stepTitle="Choose Your Product"
-            stepDescription="Browse and select the item that fits your preference."
+            stepDescription="Browse and select the item that fits your preference and requirements."
             stepImage={image1}
             cclass="bg-black text-white"
           />

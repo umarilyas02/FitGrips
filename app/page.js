@@ -1,3 +1,4 @@
+import BlogsSection from "@/components/Home/BlogsSection/BlogsSection";
 import Explore from "@/components/Home/Explore/Explore";
 import Hero from "@/components/Home/Hero/Hero";
 import OrderProcess from "@/components/Home/OrderProcess/OrderProcess";
@@ -12,6 +13,7 @@ export default function Home() {
 <Trending />
 <Explore />
 <OrderProcess />
+<BlogsSection />
 
     </div>
   );

@@ -19,6 +19,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body
         className={`${mori.className} antialiased flex flex-col h-screen overflow-x-hidden`}
+        suppressHydrationWarning={true}
       >
         <Navbar />
         {children}
