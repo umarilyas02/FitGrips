@@ -21,7 +21,7 @@ const Blogs = () => {
   }, [blogs.blog_id]);
   return (
    
-      <div className='flex gap-2 overflow-x-scroll snap-x snap-mandatory px-2 md:mx-0 md:px-0 overflow-visible'>
+      <div className='flex gap-2 overflow-x-scroll md:overflow-x-hidden snap-x snap-mandatory px-2 md:mx-0 md:px-0 overflow-visible'>
         {
 
           blogs.map((blog) => (
@@ -34,7 +34,7 @@ const Blogs = () => {
                 alt={blog.blog_title}
                 className='h-60 md:h-[60vh] w-full object-cover rounded-3xl'
               />
-              <h1 className='text-lg font-semibold line-clamp-3'>{blog.blog_title}</h1>
+              <h1 className='text-lg font-semibold line-clamp-3 md:line-clamp-2'>{blog.blog_title}</h1>
               <p className='line-clamp-1 md:line-clamp-3 text-gray-600 text-sm'>{blog.short_desc}</p>
               <Link href={`/blogs/${blog.blog_id}`}>
               <span className='text-sm text-blue-400 font-semibold hover:underline '>

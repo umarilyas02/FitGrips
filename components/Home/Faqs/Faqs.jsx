@@ -62,9 +62,9 @@ const Faqs = () => {
                 className="flex flex-col bg-gray-100 p-4 rounded-3xl transition-all duration-300"
               >
                 <div
-                  className={`flex items-center justify-between cursor-pointer border-b-2 ${
-                    openFaq === faq.id 
-                      ? "border-gray-400 mb-3" 
+                  className={`flex items-center justify-between cursor-pointer border-b-4 pb-2 ${
+                    openFaq === faq.id
+                      ? "border-gray-400 my-3"
                       : "border-transparent delay-300"
                   } transition-all duration-300`}
                   onClick={() => toggleFaq(faq.id)}
