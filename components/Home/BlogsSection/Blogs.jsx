@@ -1,24 +1,19 @@
-'use client'
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 
-const Blogs = () => {
+const Blogs = async () => {
+  let blogs = [];
+  
+  try {
+    const response = await fetch(process.env.NEXT_PUBLIC_BLOG_API, {
+      cache: 'no-store' // or 'force-cache' for caching
+    });
+    blogs = await response.json();
+  } catch (error) {
+    console.error("Error fetching blogs:", error);
+  }
 
-  const [blogs, setBlogs] = useState([]);
-  useEffect(() => {
-    async function fetchBlogs() {
-      try {
-        let response = await fetch(process.env.NEXT_PUBLIC_BLOG_API);
-        let data = await response.json();
-        setBlogs(data);
-      } catch (error) {
-        console.error("Error fetching blogs:", error);
-      }
-    }
-
-    fetchBlogs();
-  }, [blogs.blog_id]);
   return (
    
       <div className='flex gap-2 overflow-x-scroll md:overflow-x-hidden snap-x snap-mandatory px-2 md:mx-0 md:px-0 overflow-visible'>

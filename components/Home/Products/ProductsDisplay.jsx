@@ -26,7 +26,6 @@ useEffect(() => {
       setPage(1);
     } catch (error) {
       console.error("Error fetching products:", error)
-
       
     }
     finally {
@@ -43,7 +42,7 @@ useEffect(() => {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 768) { // md breakpoint
-        setPageSize(3);
+        setPageSize(4);
       } else {
         setPageSize(6);
       }
@@ -80,8 +79,8 @@ useEffect(() => {
           )}
         </div>
 
-        {/* Responsive product grid (max 3 items per page, larger on desktop) */}
-        <div className= {`grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mt-8`}>
+        
+        <div className= {`grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 mt-8`}>
           {loading ? (
             Array.from({ length: pageSize }).map((_, idx) => (
               <div key={`skeleton-${idx}`} className="flex flex-col gap-1 animate-pulse">
