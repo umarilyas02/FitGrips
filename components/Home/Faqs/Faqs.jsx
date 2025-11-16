@@ -1,10 +1,6 @@
-"use client";
-import React, { useState } from "react";
-import { Plus, X } from "lucide-react";
+import FaqsDisplay from "./FaqsDisplay";
 
 const Faqs = () => {
-  const [openFaq, setOpenFaq] = useState(null);
-
   const faqs = [
     {
       id: 1,
@@ -22,7 +18,7 @@ const Faqs = () => {
       id: 3,
       question: "What are your weightlifting products made from?",
       answer:
-        "We use only premium, heavy-duty materials designed for strength and longevity. This includes reinforced stitching, high-grade cotton elastics for wraps, genuine leather for our belts, and industrial-strength velcro and metal buckles to ensure our gear can handle your toughest workouts."
+        "We use only premium, heavy-duty materials designed for strength and longevity. This includes reinforced stitching, high-grade cotton elastics for wraps, genuine leather for our belts, and industrial-strength velcro and metal buckles to ensure our gear can handle your toughest workouts.",
     },
     {
       id: 4,
@@ -31,74 +27,14 @@ const Faqs = () => {
         "Yes, we offer custom branding options for gyms and fitness centers. Please contact our support team to discuss your requirements and get a quote.",
     },
   ];
-
-  const toggleFaq = (id) => {
-    setOpenFaq(openFaq === id ? null : id);
-  };
-
   return (
     <>
-      <section className="w-full md:w-[90vw] overflow-hidden mt-12 mb-4 md:mb-8 md:mt-16">
-        <div className="flex flex-col md:flex-row px-2 md:px-4 gap-4">
-          <div className="flex flex-col gap-4 items-start justify-center px-4 md:ml-16">
-            <h1 className="text-2xl md:text-3xl font-bold">
-              Your Questions Answered — About FitGrips Premium Fitness Gear
-            </h1>
-            <p className="text-xs md:text-base text-gray-600 max-w-lg md:max-w-md">
-              Explore everything you need to know about FitGrips Wrist Grips,
-              Lifting Straps, and Knee Wraps. Designed for athletes who demand
-              support, durability, and performance FitGrips products are trusted
-              in gyms around the world. Find the right gear to power your
-              strength journey.
-            </p>
-            <button className="h-10 w-30 md:h-10 md:w-40 md:text-sm text-xs font-bold whitespace-nowrap flex items-center justify-center px-4 border border-gray-400 cursor-pointer text-white bg-black rounded-full no-underline">
-              Create Account
-            </button>
-          </div>
-          <div className="flex flex-col gap-4 overflow-y-auto max-h-[70vh] md:max-h-[80vh] pr-2 max-w-lg md:max-w-2xl">
-            {faqs.map((faq) => (
-              <div
-                key={faq.id}
-                className="flex flex-col bg-gray-100 p-4 rounded-3xl transition-all duration-300"
-              >
-                <div
-                  className={`flex items-center justify-between cursor-pointer border-b-4 pb-2 ${
-                    openFaq === faq.id
-                      ? "border-gray-400 my-3"
-                      : "border-transparent delay-300"
-                  } transition-all duration-300`}
-                  onClick={() => toggleFaq(faq.id)}
-                >
-                  <h2 className="text-md md:text-xl font-semibold">
-                    {faq.question}
-                  </h2>
-                  <button className="shrink-0 ml-4 transition-transform duration-1000 bg-black rounded-full p-2">
-                    {openFaq === faq.id ? (
-                      <X
-                        size={20}
-                        className="text-white rotate-90 transition-transform duration-1000 ease-in-out"
-                      />
-                    ) : (
-                      <Plus size={20} className="text-white transition-transform duration-1000 ease-in-out" />
-                    )}
-                  </button>
-                </div>
-                <div
-                  className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                    openFaq === faq.id
-                      ? "max-h-96 opacity-100"
-                      : "max-h-0 opacity-0"
-                  }`}
-                >
-                  <p className="text-xs md:text-base text-gray-600">
-                    {faq.answer}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <FaqsDisplay
+        title="Frequently Asked Questions"
+        desc="Have questions? We've got answers! Check out our FAQs below for quick information about ordering, shipping, products, and more."
+        button="Contact Support"
+        faqsData={faqs}
+      />
     </>
   );
 };

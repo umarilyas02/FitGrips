@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+
 import {useEffect , useState} from 'react'
 import axios from 'axios'
 import { Flame } from 'lucide-react'
@@ -115,6 +115,7 @@ useEffect(() => {
               return (
                 <div key={product.product_id || product.product_id} className="flex flex-col gap-1">
                   {/* Image wrapper keeps aspect ratio and prevents upscaling blur */}
+                  <Link href={`${product.slug}`}>
                   <div className='relative w-full aspect-square overflow-hidden rounded-2xl sm:rounded-3xl'>
                     {imgSrc && (
                       <Image
@@ -131,6 +132,7 @@ useEffect(() => {
                       <p className='m-2 text-xs whitespace-nowrap'>Save Rs {product.price - product.sale_price}</p>
                     </div>
                   </div>
+                   </Link>
                   <div>
                     <p className="text-sm text-gray-600 py-2">Delivery: 1-2 business days</p>
                   </div>
