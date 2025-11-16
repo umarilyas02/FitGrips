@@ -13,35 +13,37 @@ const ProductsDisplay = (props) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
-  const [pageSize, setPageSize] = useState(6); // Default to 6 for mobile
+  const [pageSize, setPageSize] = useState(6);
 
-useEffect(() => {
-  async function fetchproducts() {
-    try {
-      setLoading(true);
-      let response = await axios.get(process.env.NEXT_PUBLIC_PRODUCTS_API);
-      let filteredResponse = response.data.filter(item => Number(item.category_id) === Number(props.category_id));
-      setProducts(filteredResponse);
-      // Reset to first page when data/category changes
-      setPage(1);
-    } catch (error) {
-      console.error("Error fetching products:", error)
-      
+  useEffect(() => {
+    async function fetchproducts() {
+      try {
+        setLoading(true);
+        let response = await axios.get(process.env.NEXT_PUBLIC_PRODUCTS_API, {
+          origin: 'http://localhost:3000'
+        });
+        let filteredResponse = response.data.filter(item => Number(item.category_id) === Number(props.category_id));
+        setProducts(filteredResponse);
+        
+        setPage(1);
+      } catch (error) {
+        console.error("Error fetching products:", error)
+        
+      }
+      finally {
+        setLoading(false);
+      }
     }
-    finally {
-      setLoading(false);
-    }
-  }
 
   
     fetchproducts();
 
 }, [props.category_id]);
 
-  // Handle responsive page size based on screen width
+  
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 768) { // md breakpoint
+      if (window.innerWidth >= 768) {
         setPageSize(4);
       } else {
         setPageSize(6);

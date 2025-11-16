@@ -7,7 +7,7 @@ const Blogs = async () => {
 
   try {
     const response = await fetch(process.env.NEXT_PUBLIC_BLOG_API, {
-      cache: "no-store", // or 'force-cache' for caching
+      cache: "no-store",
     });
     blogs = await response.json();
   } catch (error) {
