@@ -1,9 +1,15 @@
+'use client'
+
 import React from "react";
 import Link from "next/link";
 import { Search, ShoppingCart, } from "lucide-react";
 import Image from "next/image";
 import ToggleNav from "./ToggleNav";
+import { useSelector } from 'react-redux';
+import { selectCartTotalQuantity } from '@/components/Redux/features/Cart/cartSlice';
+
 const Navbar = () => {
+  const cartQuantity = useSelector(selectCartTotalQuantity);
   
   return (
     <header className="flex flex-col">
@@ -113,12 +119,14 @@ const Navbar = () => {
               </button>
             </div>
 
-            <button className="relative">
+            <Link href="/cart" className="relative">
               <ShoppingCart strokeWidth={2} fontSize={100} size={30} />
-              <span className="absolute -top-2 -right-2 bg-gray-100 border-[0.2] text-purple-900 text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                0
-              </span>
-            </button>
+              {cartQuantity > 0 && (
+                <span className="absolute -top-2 -right-2 bg-purple-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-semibold">
+                  {cartQuantity > 99 ? '99+' : cartQuantity}
+                </span>
+              )}
+            </Link>
           </div>
         </div>
       </nav>

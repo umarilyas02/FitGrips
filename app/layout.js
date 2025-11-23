@@ -8,6 +8,7 @@ const mori = localFont({
 import "./globals.css";
 import Navbar from '@/components/Layouts/Home/Navbar/Navbar';
 import Footer from '@/components/Layouts/Home/Footer/Footer';
+import { ReduxProvider } from '@/components/Redux/store/ReduxProvider';
 
 export const metadata = {
   title: "FitGrips® -Premium Fitness Gear, Grips, Belts & more Designed for Powerlifters",
@@ -21,9 +22,11 @@ export default function RootLayout({ children }) {
         className={`${mori.className} antialiased flex flex-col h-screen overflow-x-hidden`}
         suppressHydrationWarning={true}
       >
-        <Navbar />
-        {children}
-        <Footer />
+        <ReduxProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </ReduxProvider>
       </body>
     </html>
   );

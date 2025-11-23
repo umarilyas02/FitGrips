@@ -6,21 +6,21 @@ const nextConfig = {
         remotePatterns: [
           {
             protocol: 'https',
-            hostname: 'te6fm7preu.ufs.sh', // Replace with your image host
+            hostname: 'te6fm7preu.ufs.sh', 
             port: '',
             pathname: '/**', // Allows images from any path on this host
           },
           {
             protocol: 'https',
-            hostname: 'fitgrips.com', // Replace with your image host
+            hostname: 'fitgrips.com', 
             port: '',
-            pathname: '/**', // Allows images from any path on this host
+            pathname: '/**', 
           },
           {
             protocol: 'https',
-            hostname: 'utfs.io', // Replace with your image host
+            hostname: 'utfs.io', 
             port: '',
-            pathname: '/**', // Allows images from any path on this host
+            pathname: '/**', 
           },
             {
               protocol: 'https',

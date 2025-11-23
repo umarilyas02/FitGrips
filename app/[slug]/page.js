@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { useSingleProduct } from '@/components/hooks/useSingleProduct';
+import AddToCartButton from '@/components/Products/AddToCartButton';
 
 
 export default async function ProductPage({ params }) {
@@ -40,7 +41,7 @@ export default async function ProductPage({ params }) {
     <div className="container mx-auto px-4 py-8 md:py-12">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Product Image */}
+          
           <div className="relative aspect-square w-full rounded-2xl overflow-hidden">
             {productImages.length > 0 && productImages[0].img ? (
               <Image
@@ -91,9 +92,7 @@ export default async function ProductPage({ params }) {
               </div>
             )}
 
-            <button className="mt-4 w-full bg-black text-white py-4 px-6 rounded-full font-semibold hover:bg-gray-800 transition-colors">
-              Add to Cart
-            </button>
+            <AddToCartButton product={product} />
           </div>
         </div>
       </div>
