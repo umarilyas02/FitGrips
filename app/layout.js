@@ -9,6 +9,7 @@ import "./globals.css";
 import Navbar from '@/components/Layouts/Home/Navbar/Navbar';
 import Footer from '@/components/Layouts/Home/Footer/Footer';
 import { ReduxProvider } from '@/components/Redux/store/ReduxProvider';
+import { Toaster } from 'react-hot-toast';
 
 export const metadata = {
   title: "FitGrips® -Premium Fitness Gear, Grips, Belts & more Designed for Powerlifters",
@@ -23,6 +24,24 @@ export default function RootLayout({ children }) {
         suppressHydrationWarning={true}
       >
         <ReduxProvider>
+          <Toaster
+            position="top-center"
+            reverseOrder={false}
+            toastOptions={{
+              duration: 3000,
+              style: {
+                background: '#363636',
+                color: '#fff',
+              },
+              success: {
+                duration: 3000,
+                iconTheme: {
+                  primary: '#4ade80',
+                  secondary: '#fff',
+                },
+              },
+            }}
+          />
           <Navbar />
           {children}
           <Footer />
