@@ -113,6 +113,7 @@ const Footer = () => {
              <div>
   Developed by 
   <a
+    style={{ marginLeft: '.5rem' }}
     href="https://umarilyas.dev"
     target="_blank"
     rel="noopener noreferrer"
