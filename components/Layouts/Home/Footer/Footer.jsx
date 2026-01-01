@@ -111,8 +111,16 @@ const Footer = () => {
       <div className="flex flex-col md:flex-row mx-4 lg:mx-8 py-8 justify-between gap-6 md:relative h-40 ">
         <div className="text-xs text-center md:justify-start md:font-bold md:text-sm">
              <div>
-             Developed by <a href='umarilyas.dev'>UMAR ILYAS</a>
-             </div>
+  Developed by 
+  <a
+    href="https://umarilyas.dev"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    UMAR ILYAS
+  </a>
+</div>
+
           
         </div>
         <div className="flex items-center justify-center gap-4 md:justify-end md:absolute right-0 bottom-14 ">
